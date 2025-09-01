@@ -1,0 +1,222 @@
+🌐 JSMF Loan Services Website Structure
+1. Home Page
+
+Hero Banner
+
+Tagline: "Your Trusted Loan Partner – Serving 1000+ Clients Across India"
+
+Call-to-Action (Apply Now / Check Eligibility)
+
+Key Highlights:
+
+✅ 1000+ Trusted Clients
+
+✅ 10+ Locations in India
+
+✅ Partnered with Top 10 Indian Banks
+
+✅ ₹200+ Crore Loan Disbursed
+
+Quick Loan Categories Cards (Home Loan, Car Loan, Personal Loan, Business Loan, etc.)
+
+EMI Calculator (quick widget)
+
+Testimonials & Success Stories
+
+Partner Bank Logos
+
+2. About Us
+
+Company Overview
+
+Vision & Mission
+
+Leadership Team
+
+Achievements:
+
+1000+ Clients Served
+
+200+ Crore Loan Passed
+
+10+ Cities Covered
+
+Why Choose JSMF?
+
+3. Loan Services
+
+(Main Category Page – Listing all loan types with links)
+
+3.1 Home Loans
+
+Home Loan for Salaried Employees
+
+Home Loan for Self-Employed Professionals
+
+Home Loan Balance Transfer
+
+Home Renovation Loan
+
+Home Construction Loan
+
+Plot + Construction Loan
+
+Each Loan Page Includes:
+
+Interest Rate (Starting from 7%)
+
+Eligibility
+
+Documents Required
+
+Loan Amount & Tenure
+
+EMI Calculator Integration
+
+Apply Now Button
+
+3.2 Personal Loans
+
+Personal Loan for Salaried Employees
+
+Personal Loan for Self-Employed
+
+Personal Loan for Medical Emergency
+
+Personal Loan for Marriage/Events
+
+Personal Loan for Education
+
+3.3 Business Loans
+
+SME/MSME Business Loan
+
+Startup Loan
+
+Business Expansion Loan
+
+Working Capital Loan
+
+Machinery & Equipment Loan
+
+3.4 Car Loans
+
+New Car Loan
+
+Used Car Loan
+
+Car Loan Balance Transfer
+
+3.5 Loan Against Property (LAP)
+
+Residential Property LAP
+
+Commercial Property LAP
+
+Industrial Property LAP
+
+3.6 Education Loans
+
+Loan for Higher Education in India
+
+Loan for Abroad Studies
+
+3.7 Gold Loans
+
+Instant Loan Against Gold
+
+Low Interest Gold Loan
+
+3.8 Top-Up Loans
+
+Home Loan Top-Up
+
+Personal Loan Top-Up
+
+Business Loan Top-Up
+
+4. EMI Calculator
+
+Loan Amount (Min ₹1 Lakh – Max ₹5 Crore)
+
+Interest Rate (7% – 24%)
+
+Loan Tenure (1 – 30 Years)
+
+Calculate Button → Shows EMI, Interest Payable, Total Amount
+
+5. Partner Banks
+
+SBI
+
+HDFC Bank
+
+ICICI Bank
+
+Axis Bank
+
+Kotak Mahindra Bank
+
+Punjab National Bank (PNB)
+
+Bank of Baroda (BoB)
+
+IDFC First Bank
+
+Union Bank of India
+
+Canara Bank
+
+(With logos + "We partner with India’s leading banks to bring you the best offers.")
+
+6. Client Stories
+
+Case Studies (Example: Mr. Sharma got a ₹50 Lakh home loan approved in 7 days)
+
+Video Testimonials
+
+Reviews Section
+
+7. FAQ
+
+General Loan Questions
+
+Home Loan FAQs
+
+Personal Loan FAQs
+
+Business Loan FAQs
+
+EMI & Interest FAQs
+
+8. Contact Us
+
+Office Address: HARSH SAHU, Shop No 2, Near Mittal College, Karond, Bhopal, Madhya Pradesh
+
+Phone: +91 62620 79180
+
+Email: costumercare@jsmf.in
+
+Google Map Embed
+
+Enquiry Form (Name, Phone, Loan Type, Amount, Submit)
+
+9. Apply Now
+
+Step 1: Select Loan Type
+
+Step 2: Enter Personal & Financial Details
+
+Step 3: Upload Documents
+
+Step 4: Submit Application → Generate Reference ID
+
+10. Legal & Info
+
+Privacy Policy
+
+Terms & Conditions
+
+Disclaimer
+
+RBI Guidelines

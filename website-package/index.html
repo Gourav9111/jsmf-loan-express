@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSMF Loan Services - Your Trusted Loan Partner</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2>JSMF Loan Services</h2>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html" class="nav-link">Loan Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="home-loans.html">Home Loans</a>
+                                <a href="personal-loans.html">Personal Loans</a>
+                                <a href="business-loans.html">Business Loans</a>
+                                <a href="car-loans.html">Car Loans</a>
+                                <a href="loan-against-property.html">Loan Against Property</a>
+                                <a href="education-loans.html">Education Loans</a>
+                                <a href="gold-loans.html">Gold Loans</a>
+                            </div>
+                        </li>
+                        <li><a href="emi-calculator.html" class="nav-link">EMI Calculator</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="admin/login.php" class="nav-link">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Your Trusted Loan Partner</h1>
+                    <p class="hero-subtitle">Serving 1000+ Clients Across India</p>
+                    <div class="hero-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-check-circle"></i>
+                            <span>1000+ Trusted Clients</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>10+ Locations in India</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-university"></i>
+                            <span>Partnered with Top 10 Indian Banks</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-rupee-sign"></i>
+                            <span>₹200+ Crore Loan Disbursed</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="apply.html" class="btn btn-primary">Apply Now</a>
+                        <a href="emi-calculator.html" class="btn btn-outline">Check Eligibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Categories -->
+    <section class="loan-categories">
+        <div class="container">
+            <h2 class="section-title">Our Loan Services</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Loans</h3>
+                    <p>Starting from 7% interest rate</p>
+                    <a href="home-loans.html" class="card-link">Learn More</a>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Personal Loans</h3>
+                    <p>Quick approval in 24 hours</p>
+                    <a href="personal-loans.html" class="card-link">Learn More</a>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Loans</h3>
+                    <p>Fuel your business growth</p>
+                    <a href="business-loans.html" class="card-link">Learn More</a>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Car Loans</h3>
+                    <p>Drive your dream car today</p>
+                    <a href="car-loans.html" class="card-link">Learn More</a>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Loan Against Property</h3>
+                    <p>Unlock your property's value</p>
+                    <a href="loan-against-property.html" class="card-link">Learn More</a>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Loans</h3>
+                    <p>Invest in your future</p>
+                    <a href="education-loans.html" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMI Calculator Widget -->
+    <section class="emi-widget">
+        <div class="container">
+            <div class="emi-card">
+                <h3>Quick EMI Calculator</h3>
+                <div class="emi-form">
+                    <div class="form-group">
+                        <label>Loan Amount (₹)</label>
+                        <input type="number" id="loanAmount" placeholder="e.g., 1000000" min="100000" max="50000000">
+                    </div>
+                    <div class="form-group">
+                        <label>Interest Rate (%)</label>
+                        <input type="number" id="interestRate" placeholder="e.g., 8.5" min="7" max="24" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label>Loan Tenure (Years)</label>
+                        <input type="number" id="loanTenure" placeholder="e.g., 20" min="1" max="30">
+                    </div>
+                    <button onclick="calculateEMI()" class="btn btn-primary">Calculate EMI</button>
+                </div>
+                <div class="emi-result" id="emiResult" style="display: none;">
+                    <h4>EMI Calculation Result</h4>
+                    <div class="result-item">
+                        <span>Monthly EMI:</span>
+                        <strong id="monthlyEMI">₹0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Total Interest:</span>
+                        <strong id="totalInterest">₹0</strong>
+                    </div>
+                    <div class="result-item">
+                        <span>Total Amount:</span>
+                        <strong id="totalAmount">₹0</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Banks -->
+    <section class="partner-banks">
+        <div class="container">
+            <h2 class="section-title">Our Partner Banks</h2>
+            <p class="section-subtitle">We partner with India's leading banks to bring you the best offers</p>
+            <div class="banks-grid">
+                <div class="bank-logo">
+                    <img src="assets/images/banks/sbi.png" alt="SBI" onerror="this.style.display='none'">
+                    <span>SBI</span>
+                </div>
+                <div class="bank-logo">
+                    <img src="assets/images/banks/hdfc.png" alt="HDFC Bank" onerror="this.style.display='none'">
+                    <span>HDFC Bank</span>
+                </div>
+                <div class="bank-logo">
+                    <img src="assets/images/banks/icici.png" alt="ICICI Bank" onerror="this.style.display='none'">
+                    <span>ICICI Bank</span>
+                </div>
+                <div class="bank-logo">
+                    <img src="assets/images/banks/axis.png" alt="Axis Bank" onerror="this.style.display='none'">
+                    <span>Axis Bank</span>
+                </div>
+                <div class="bank-logo">
+                    <img src="assets/images/banks/kotak.png" alt="Kotak Mahindra Bank" onerror="this.style.display='none'">
+                    <span>Kotak Bank</span>
+                </div>
+                <div class="bank-logo">
+                    <img src="assets/images/banks/pnb.png" alt="Punjab National Bank" onerror="this.style.display='none'">
+                    <span>PNB</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"JSMF helped me get my home loan approved in just 7 days. Their team was very professional and supportive throughout the process."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Mr. Raj Sharma</strong>
+                        <span>Home Loan - ₹50 Lakhs</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Excellent service for business loan. The interest rates were competitive and the documentation process was smooth."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Ms. Priya Patel</strong>
+                        <span>Business Loan - ₹25 Lakhs</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Quick personal loan approval for my medical emergency. JSMF team understood my urgency and helped immediately."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <strong>Mr. Amit Kumar</strong>
+                        <span>Personal Loan - ₹5 Lakhs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JSMF Loan Services</h3>
+                    <p>Your trusted loan partner for all financial needs. We help you achieve your dreams with the right loan solutions.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 62620 79180</p>
+                        <p><i class="fas fa-envelope"></i> costumercare@jsmf.in</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shop No 2, Near Mittal College, Karond, Bhopal, MP</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Loan Services</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Loan Products</h4>
+                    <ul>
+                        <li><a href="home-loans.html">Home Loans</a></li>
+                        <li><a href="personal-loans.html">Personal Loans</a></li>
+                        <li><a href="business-loans.html">Business Loans</a></li>
+                        <li><a href="car-loans.html">Car Loans</a></li>
+                        <li><a href="education-loans.html">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="rbi-guidelines.html">RBI Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JSMF Loan Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

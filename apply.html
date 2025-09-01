@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Loan - JSMF Loan Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2>JSMF Loan Services</h2>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html" class="nav-link">Loan Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="home-loans.html">Home Loans</a>
+                                <a href="personal-loans.html">Personal Loans</a>
+                                <a href="business-loans.html">Business Loans</a>
+                                <a href="car-loans.html">Car Loans</a>
+                                <a href="loan-against-property.html">Loan Against Property</a>
+                                <a href="education-loans.html">Education Loans</a>
+                                <a href="gold-loans.html">Gold Loans</a>
+                            </div>
+                        </li>
+                        <li><a href="emi-calculator.html" class="nav-link">EMI Calculator</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="admin/login.php" class="nav-link">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Apply for Loan</h1>
+            <p>Complete your loan application in 3 simple steps</p>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="content-section">
+        <div class="container">
+            <div class="process-steps" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div class="process-step" style="text-align: center; padding: 2rem; background: #f8fafc; border-radius: 15px;">
+                    <div style="width: 80px; height: 80px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; font-weight: 700;">1</div>
+                    <h3>Select Loan Type</h3>
+                    <p>Choose the loan that best fits your needs</p>
+                </div>
+                <div class="process-step" style="text-align: center; padding: 2rem; background: #f8fafc; border-radius: 15px;">
+                    <div style="width: 80px; height: 80px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; font-weight: 700;">2</div>
+                    <h3>Fill Application</h3>
+                    <p>Provide your personal and financial details</p>
+                </div>
+                <div class="process-step" style="text-align: center; padding: 2rem; background: #f8fafc; border-radius: 15px;">
+                    <div style="width: 80px; height: 80px; background: #2563eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem; font-weight: 700;">3</div>
+                    <h3>Get Approval</h3>
+                    <p>Receive instant approval and loan disbursal</p>
+                </div>
+            </div>
+
+            <div class="form-container" style="max-width: 800px;">
+                <h2>Loan Application Form</h2>
+                <p>Please fill out all the required fields accurately. Our team will process your application within 24-48 hours.</p>
+                
+                <form id="loanApplicationForm" onsubmit="submitLoanApplication(event)">
+                    <!-- Step 1: Loan Details -->
+                    <div class="form-section">
+                        <h3 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+                            <i class="fas fa-money-check-alt"></i> Loan Details
+                        </h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="loan_type">Loan Type *</label>
+                                <select id="loan_type" name="loan_type" required>
+                                    <option value="">Select Loan Type</option>
+                                    <option value="Home Loan">Home Loan</option>
+                                    <option value="Personal Loan">Personal Loan</option>
+                                    <option value="Business Loan">Business Loan</option>
+                                    <option value="Car Loan">Car Loan</option>
+                                    <option value="Education Loan">Education Loan</option>
+                                    <option value="Loan Against Property">Loan Against Property</option>
+                                    <option value="Gold Loan">Gold Loan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="loan_amount">Loan Amount (₹) *</label>
+                                <input type="number" id="loan_amount" name="loan_amount" required min="100000" max="50000000" placeholder="e.g., 1000000">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="purpose">Purpose of Loan</label>
+                            <textarea id="purpose" name="purpose" placeholder="Please describe the purpose of your loan..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Personal Details -->
+                    <div class="form-section" style="margin-top: 2rem;">
+                        <h3 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+                            <i class="fas fa-user"></i> Personal Information
+                        </h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="As per PAN Card">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth *</label>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Mobile Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pan">PAN Number *</label>
+                                <input type="text" id="pan" name="pan" required placeholder="ABCDE1234F" maxlength="10" style="text-transform: uppercase;">
+                            </div>
+                            <div class="form-group">
+                                <label for="aadhar">Aadhar Number</label>
+                                <input type="text" id="aadhar" name="aadhar" placeholder="12-digit Aadhar number" maxlength="12">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" required placeholder="Complete address with landmarks"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State *</label>
+                                <select id="state" name="state" required>
+                                    <option value="">Select State</option>
+                                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                    <option value="Assam">Assam</option>
+                                    <option value="Bihar">Bihar</option>
+                                    <option value="Chhattisgarh">Chhattisgarh</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="Gujarat">Gujarat</option>
+                                    <option value="Haryana">Haryana</option>
+                                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Kerala">Kerala</option>
+                                    <option value="Madhya Pradesh" selected>Madhya Pradesh</option>
+                                    <option value="Maharashtra">Maharashtra</option>
+                                    <option value="Odisha">Odisha</option>
+                                    <option value="Punjab">Punjab</option>
+                                    <option value="Rajasthan">Rajasthan</option>
+                                    <option value="Tamil Nadu">Tamil Nadu</option>
+                                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                    <option value="West Bengal">West Bengal</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode">Pincode *</label>
+                                <input type="text" id="pincode" name="pincode" required maxlength="6" placeholder="6-digit pincode">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Employment Details -->
+                    <div class="form-section" style="margin-top: 2rem;">
+                        <h3 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+                            <i class="fas fa-briefcase"></i> Employment Information
+                        </h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="employment_type">Employment Type *</label>
+                                <select id="employment_type" name="employment_type" required>
+                                    <option value="">Select Employment Type</option>
+                                    <option value="Salaried">Salaried Employee</option>
+                                    <option value="Self Employed Professional">Self Employed Professional</option>
+                                    <option value="Self Employed Business">Self Employed Business</option>
+                                    <option value="Freelancer">Freelancer</option>
+                                    <option value="Retired">Retired</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="company_name">Company/Business Name</label>
+                                <input type="text" id="company_name" name="company_name" placeholder="Current employer or business name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="monthly_income">Monthly Income (₹) *</label>
+                                <input type="number" id="monthly_income" name="monthly_income" required min="15000" placeholder="Net monthly income">
+                            </div>
+                            <div class="form-group">
+                                <label for="work_experience">Work Experience (Years)</label>
+                                <select id="work_experience" name="work_experience">
+                                    <option value="">Select Experience</option>
+                                    <option value="0-1">0-1 Years</option>
+                                    <option value="1-3">1-3 Years</option>
+                                    <option value="3-5">3-5 Years</option>
+                                    <option value="5-10">5-10 Years</option>
+                                    <option value="10+">10+ Years</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div id="eligibilityResult"></div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 15px 50px; font-size: 1.1rem;">
+                            <i class="fas fa-paper-plane"></i> Submit Application
+                        </button>
+                        <p style="margin-top: 1rem; color: #6b7280; font-size: 0.9rem;">
+                            By submitting this form, you agree to our <a href="terms-conditions.html" style="color: #2563eb;">Terms & Conditions</a> 
+                            and <a href="privacy-policy.html" style="color: #2563eb;">Privacy Policy</a>.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section style="padding: 80px 0; background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Why Choose JSMF Loan Services?</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Processing</h3>
+                    <p>Get your loan approved in 24-48 hours with minimal documentation</p>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3>Best Interest Rates</h3>
+                    <p>Competitive interest rates starting from 7% per annum</p>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Process</h3>
+                    <p>100% secure and confidential loan application process</p>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Expert Support</h3>
+                    <p>Dedicated loan advisors to guide you through the entire process</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JSMF Loan Services</h3>
+                    <p>Your trusted loan partner for all financial needs. We help you achieve your dreams with the right loan solutions.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 62620 79180</p>
+                        <p><i class="fas fa-envelope"></i> costumercare@jsmf.in</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shop No 2, Near Mittal College, Karond, Bhopal, MP</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Loan Services</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Loan Products</h4>
+                    <ul>
+                        <li><a href="home-loans.html">Home Loans</a></li>
+                        <li><a href="personal-loans.html">Personal Loans</a></li>
+                        <li><a href="business-loans.html">Business Loans</a></li>
+                        <li><a href="car-loans.html">Car Loans</a></li>
+                        <li><a href="education-loans.html">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="rbi-guidelines.html">RBI Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JSMF Loan Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

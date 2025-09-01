@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator - JSMF Loan Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .calculator-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .calculator-header {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .calculator-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 3rem;
+        }
+        .slider-container {
+            margin: 1.5rem 0;
+        }
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        .slider-value {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .range-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e5e7eb;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .range-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #2563eb;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .result-section {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .result-main {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin: 1rem 0;
+        }
+        .result-breakdown {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .result-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .result-item span:first-child {
+            color: #6b7280;
+            font-weight: 500;
+        }
+        .result-item span:last-child {
+            color: #1f2937;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .chart-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(#2563eb 0deg 180deg, #e5e7eb 180deg 360deg);
+            margin: 2rem auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chart-inner {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        @media (max-width: 768px) {
+            .calculator-body {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2>JSMF Loan Services</h2>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html" class="nav-link">Loan Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="home-loans.html">Home Loans</a>
+                                <a href="personal-loans.html">Personal Loans</a>
+                                <a href="business-loans.html">Business Loans</a>
+                                <a href="car-loans.html">Car Loans</a>
+                                <a href="loan-against-property.html">Loan Against Property</a>
+                                <a href="education-loans.html">Education Loans</a>
+                                <a href="gold-loans.html">Gold Loans</a>
+                            </div>
+                        </li>
+                        <li><a href="emi-calculator.html" class="nav-link active">EMI Calculator</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="admin/login.php" class="nav-link">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>EMI Calculator</h1>
+            <p>Calculate your monthly EMI and plan your loan repayment</p>
+        </div>
+    </section>
+
+    <!-- EMI Calculator -->
+    <section class="content-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h2>Loan EMI Calculator</h2>
+                    <p>Adjust the sliders to calculate your monthly EMI</p>
+                </div>
+                
+                <div class="calculator-body">
+                    <div class="calculator-inputs">
+                        <h3 style="margin-bottom: 2rem; color: #1f2937;">Loan Details</h3>
+                        
+                        <!-- Loan Amount Slider -->
+                        <div class="slider-container">
+                            <div class="slider-label">
+                                <span>Loan Amount</span>
+                                <span class="slider-value" id="loanAmountDisplay">₹10,00,000</span>
+                            </div>
+                            <input type="range" class="range-slider" id="loanAmountSlider" 
+                                   min="100000" max="50000000" value="1000000" step="50000"
+                                   oninput="updateLoanAmount(this.value); autoCalculateEMI()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
+                                <span>₹1L</span>
+                                <span>₹5Cr</span>
+                            </div>
+                        </div>
+
+                        <!-- Interest Rate Slider -->
+                        <div class="slider-container">
+                            <div class="slider-label">
+                                <span>Interest Rate (Annual)</span>
+                                <span class="slider-value" id="interestRateDisplay">8.5%</span>
+                            </div>
+                            <input type="range" class="range-slider" id="interestRateSlider" 
+                                   min="7" max="24" value="8.5" step="0.1"
+                                   oninput="updateInterestRate(this.value); autoCalculateEMI()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
+                                <span>7%</span>
+                                <span>24%</span>
+                            </div>
+                        </div>
+
+                        <!-- Loan Tenure Slider -->
+                        <div class="slider-container">
+                            <div class="slider-label">
+                                <span>Loan Tenure</span>
+                                <span class="slider-value" id="loanTenureDisplay">20 years</span>
+                            </div>
+                            <input type="range" class="range-slider" id="loanTenureSlider" 
+                                   min="1" max="30" value="20" step="1"
+                                   oninput="updateLoanTenure(this.value); autoCalculateEMI()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">
+                                <span>1 Year</span>
+                                <span>30 Years</span>
+                            </div>
+                        </div>
+
+                        <!-- Manual Input Fields -->
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                            <h4 style="margin-bottom: 1rem; color: #374151;">Or Enter Manually</h4>
+                            <div class="form-group">
+                                <input type="number" id="loanAmount" placeholder="Loan Amount (₹)" 
+                                       onchange="document.getElementById('loanAmountSlider').value = this.value; updateLoanAmount(this.value); autoCalculateEMI()">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="interestRate" placeholder="Interest Rate (%)" step="0.1"
+                                       onchange="document.getElementById('interestRateSlider').value = this.value; updateInterestRate(this.value); autoCalculateEMI()">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="loanTenure" placeholder="Loan Tenure (Years)"
+                                       onchange="document.getElementById('loanTenureSlider').value = this.value; updateLoanTenure(this.value); autoCalculateEMI()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-results">
+                        <div class="result-section">
+                            <h3 style="margin-bottom: 1rem; color: #1f2937;">Monthly EMI</h3>
+                            <div class="result-main" id="monthlyEMI">₹8,364</div>
+                            <p style="color: #6b7280;">Amount you pay every month</p>
+
+                            <!-- Visual Chart -->
+                            <div class="chart-placeholder" id="loanChart">
+                                <div class="chart-inner">
+                                    <div style="font-size: 0.875rem;">Principal</div>
+                                    <div style="font-size: 1.2rem; color: #2563eb;">50%</div>
+                                </div>
+                            </div>
+
+                            <div class="result-breakdown">
+                                <div class="result-item">
+                                    <span>Principal Amount</span>
+                                    <span id="principalAmount">₹10,00,000</span>
+                                </div>
+                                <div class="result-item">
+                                    <span>Total Interest Payable</span>
+                                    <span id="totalInterest">₹10,07,360</span>
+                                </div>
+                                <div class="result-item">
+                                    <span>Total Amount Payable</span>
+                                    <span id="totalAmount">₹20,07,360</span>
+                                </div>
+                                <div class="result-item">
+                                    <span>Loan Tenure</span>
+                                    <span id="tenureDisplay">20 Years (240 months)</span>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 2rem;">
+                                <a href="apply.html" class="btn btn-primary" style="width: 100%;">
+                                    <i class="fas fa-file-alt"></i> Apply for This Loan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMI Tips -->
+    <section style="padding: 80px 0; background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">EMI Planning Tips</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Choose Right Tenure</h3>
+                    <p>Longer tenure means lower EMI but higher total interest. Balance EMI affordability with total cost.</p>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Compare Interest Rates</h3>
+                    <p>Even a 0.5% difference in interest rate can save lakhs over the loan tenure. Compare offers from multiple banks.</p>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Prepayment Benefits</h3>
+                    <p>Make prepayments when possible to reduce principal amount and save on interest payments.</p>
+                </div>
+                <div class="category-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>EMI-to-Income Ratio</h3>
+                    <p>Keep your total EMIs (all loans) below 40% of your monthly income for comfortable repayment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Types -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Calculate EMI for Different Loan Types</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <h3>Home Loan EMI</h3>
+                    <p><strong>Interest Rate:</strong> 7% - 9% per annum</p>
+                    <p><strong>Tenure:</strong> Up to 30 years</p>
+                    <p><strong>Amount:</strong> Up to ₹5 Crore</p>
+                    <a href="home-loans.html" class="card-link">Calculate Home Loan EMI</a>
+                </div>
+                <div class="category-card">
+                    <h3>Personal Loan EMI</h3>
+                    <p><strong>Interest Rate:</strong> 10% - 18% per annum</p>
+                    <p><strong>Tenure:</strong> Up to 7 years</p>
+                    <p><strong>Amount:</strong> Up to ₹50 Lakhs</p>
+                    <a href="personal-loans.html" class="card-link">Calculate Personal Loan EMI</a>
+                </div>
+                <div class="category-card">
+                    <h3>Car Loan EMI</h3>
+                    <p><strong>Interest Rate:</strong> 8% - 12% per annum</p>
+                    <p><strong>Tenure:</strong> Up to 7 years</p>
+                    <p><strong>Amount:</strong> Up to ₹1 Crore</p>
+                    <a href="car-loans.html" class="card-link">Calculate Car Loan EMI</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JSMF Loan Services</h3>
+                    <p>Your trusted loan partner for all financial needs. We help you achieve your dreams with the right loan solutions.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 62620 79180</p>
+                        <p><i class="fas fa-envelope"></i> costumercare@jsmf.in</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shop No 2, Near Mittal College, Karond, Bhopal, MP</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Loan Services</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Loan Products</h4>
+                    <ul>
+                        <li><a href="home-loans.html">Home Loans</a></li>
+                        <li><a href="personal-loans.html">Personal Loans</a></li>
+                        <li><a href="business-loans.html">Business Loans</a></li>
+                        <li><a href="car-loans.html">Car Loans</a></li>
+                        <li><a href="education-loans.html">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="rbi-guidelines.html">RBI Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JSMF Loan Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Initialize calculator on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial values
+            document.getElementById('loanAmount').value = 1000000;
+            document.getElementById('interestRate').value = 8.5;
+            document.getElementById('loanTenure').value = 20;
+            
+            // Calculate initial EMI
+            autoCalculateEMI();
+        });
+    </script>
+</body>
+</html>

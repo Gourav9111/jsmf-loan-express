@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - JSMF Loan Services</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h2>JSMF Loan Services</h2>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="services.html" class="nav-link">Loan Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="home-loans.html">Home Loans</a>
+                                <a href="personal-loans.html">Personal Loans</a>
+                                <a href="business-loans.html">Business Loans</a>
+                                <a href="car-loans.html">Car Loans</a>
+                                <a href="loan-against-property.html">Loan Against Property</a>
+                                <a href="education-loans.html">Education Loans</a>
+                                <a href="gold-loans.html">Gold Loans</a>
+                            </div>
+                        </li>
+                        <li><a href="emi-calculator.html" class="nav-link">EMI Calculator</a></li>
+                        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                        <li><a href="admin/login.php" class="nav-link">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our loan experts for personalized assistance</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-main">
+                    <div class="form-container">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and our team will get back to you within 24 hours.</p>
+                        
+                        <form id="contactForm" onsubmit="submitContactForm(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Mobile Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <select id="subject" name="subject">
+                                        <option value="">Select Subject</option>
+                                        <option value="Home Loan Inquiry">Home Loan Inquiry</option>
+                                        <option value="Personal Loan Inquiry">Personal Loan Inquiry</option>
+                                        <option value="Business Loan Inquiry">Business Loan Inquiry</option>
+                                        <option value="Car Loan Inquiry">Car Loan Inquiry</option>
+                                        <option value="Education Loan Inquiry">Education Loan Inquiry</option>
+                                        <option value="Loan Against Property">Loan Against Property</option>
+                                        <option value="Gold Loan Inquiry">Gold Loan Inquiry</option>
+                                        <option value="Existing Loan Support">Existing Loan Support</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Partnership Inquiry">Partnership Inquiry</option>
+                                        <option value="Complaint">Complaint</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required placeholder="Please describe your loan requirement or query in detail..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="sidebar-item">
+                        <strong><i class="fas fa-map-marker-alt"></i> Office Address</strong>
+                        <p>HARSH SAHU<br>
+                        Shop No 2, Near Mittal College<br>
+                        Karond, Bhopal<br>
+                        Madhya Pradesh, India</p>
+                    </div>
+                    
+                    <div class="sidebar-item">
+                        <strong><i class="fas fa-phone"></i> Phone</strong>
+                        <p><a href="tel:+916262079180" onclick="trackCall('contact-page')">+91 62620 79180</a></p>
+                    </div>
+                    
+                    <div class="sidebar-item">
+                        <strong><i class="fas fa-envelope"></i> Email</strong>
+                        <p><a href="mailto:costumercare@jsmf.in" onclick="trackEmail('contact-page')">costumercare@jsmf.in</a></p>
+                    </div>
+                    
+                    <div class="sidebar-item">
+                        <strong><i class="fas fa-clock"></i> Office Hours</strong>
+                        <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>
+                        Sunday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                    
+                    <div class="sidebar-item">
+                        <strong><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+                        <button onclick="openWhatsApp('Hi JSMF, I need help with loan services')" class="btn btn-outline" style="width: 100%; margin-top: 0.5rem;">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" style="padding: 80px 0; background: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Find Our Office</h2>
+            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.4872448284087!2d77.37829321539152!3d23.276884384798562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c6768c4c4d7f7%3A0x8b5c1c0c1c0c0c0c!2sKarond%2C%20Bhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890123" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 10px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact" style="padding: 80px 0; background: linear-gradient(135deg, #1f2937 0%, #374151 100%); color: white;">
+        <div class="container">
+            <div class="content-grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
+                <div>
+                    <h2>Need Immediate Assistance?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                        Our loan experts are available to help you with your financial needs. 
+                        Get instant support for all your loan queries.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <a href="tel:+916262079180" class="btn btn-primary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="apply.html" class="btn btn-outline">
+                            <i class="fas fa-file-alt"></i> Apply Online
+                        </a>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px);">
+                        <h3 style="margin-bottom: 1.5rem;">Quick Response Time</h3>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; text-align: center;">
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; color: #fbbf24;">24</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Hours Response</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2rem; font-weight: 700; color: #fbbf24;">7</div>
+                                <div style="font-size: 0.9rem; opacity: 0.8;">Days Processing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JSMF Loan Services</h3>
+                    <p>Your trusted loan partner for all financial needs. We help you achieve your dreams with the right loan solutions.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +91 62620 79180</p>
+                        <p><i class="fas fa-envelope"></i> costumercare@jsmf.in</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Shop No 2, Near Mittal College, Karond, Bhopal, MP</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Loan Services</a></li>
+                        <li><a href="emi-calculator.html">EMI Calculator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Loan Products</h4>
+                    <ul>
+                        <li><a href="home-loans.html">Home Loans</a></li>
+                        <li><a href="personal-loans.html">Personal Loans</a></li>
+                        <li><a href="business-loans.html">Business Loans</a></li>
+                        <li><a href="car-loans.html">Car Loans</a></li>
+                        <li><a href="education-loans.html">Education Loans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                        <li><a href="rbi-guidelines.html">RBI Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JSMF Loan Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
